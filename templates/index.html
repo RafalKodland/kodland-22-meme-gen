@@ -38,17 +38,17 @@
               <option value="meme_1.jpg" {% if selected_image == 'meme_1.jpg' %}selected{% endif %}>Disaster girl</option>
               <option value="meme_2.jpg" {% if selected_image == 'meme_2.jpg' %}selected{% endif %}>Two buttons</option>
               <!--Assignment #1. Add new memes here -->
-
+              <option value="meme_3.jpg" {% if selected_image == 'meme_3.jpg' %}selected{% endif %}>Ms Incredible</option>
 
             </select>
           </li>
           <li class="form-list_item">
             <label for="textTop">Enter top text here</label>
-            <input class="input_text" type="text" placeholder="Top text" name="textTop">
+            <input class="input_text" type="text" placeholder="Top text" name="textTop" value="{{top_text}}">
           </li>
           <li class="form-list_item">
             <label for="textBottom">Enter bottom text here</label>
-            <input class="input_text" type="text" placeholder="Bottom text" name="textBottom">
+            <input class="input_text" type="text" placeholder="Bottom text" name="textBottom" value="{{bottom_text}}">
           </li>
           <li class="form-list_item">
             <label for="color-selector">Set the text colour</label>
@@ -62,11 +62,11 @@
           </li>
           <li class="form-list_item">
             <label for="textTop_y">Input the positioning of top text across the Y axis</label>
-            <input class="input_text" id="textTop_y" type="text" placeholder="Top text" name="textTop_y">
+            <input class="input_text" id="textTop_y" type="text" placeholder="Top text" name="textTop_y" value="{{top_text_y}}">
           </li>
           <li class="form-list_item">
             <label for="textBottom_y">Input the positioning of bottom text across the Y axis</label>
-            <input class="input_text" id="textBottom_y" type="text" placeholder="Bottom text" name="textBottom_y">
+            <input class="input_text" id="textBottom_y" type="text" placeholder="Bottom text" name="textBottom_y" value="{{bottom_text_y}}">
           </li>
           <button type="submit">Generate meme</button>
         </ul>
@@ -74,15 +74,18 @@
     </div>
     <div class="meme-block" id="memeBlock">
       
-      <p class="text_top" style="<!-- Assignment #3. Moving the variables to CSS -->">
+      <p class="text_top" style="color: {{selected_color}}; top: {{top_text_y}}">
         <!-- Assignment #2. Placing the variable with the text -->
+         {{ top_text }}
       </p>
 
       <img class="meme" src="{{ url_for('serve_images', path=selected_image) }}" alt="{{ selected_image }}">
 
-      <p class="text_bottom" style="<!-- Assignment #3. Moving the variables to CSS -->">
+      <p class="text_bottom" style="color: {{selected_color}}; bottom: {{bottom_text_y}}">
         <!-- Assignment #2. Placing the variable with the text -->
+         {{ bottom_text }}
       </p>
+
     </div>
     {% endblock %}
   </main>

@@ -12,10 +12,13 @@ def index():
         selected_image = request.form.get('image-selector')
 
         # Assignment #2.Receiving the text
-        
+        top_text = request.form.get('textTop')
+        bottom_text = request.form.get('textBottom')
 
         # Assignment #3. Receiving the text's positioning
-       
+        selected_color = request.form.get('color-selector')
+        top_text_y = request.form.get('textTop_y')
+        bottom_text_y = request.form.get('textBottom_y')
 
         # Assignment #3. Receiving the text's colour
         
@@ -25,10 +28,13 @@ def index():
                                selected_image=selected_image, 
 
                                # Assignment #2. Displaying the text
-                               
+                               top_text=top_text,
+                               bottom_text=bottom_text,
 
                                # Assignment #3. Displaying the colour 
-                               
+                               selected_color=selected_color,
+                               top_text_y=top_text_y,
+                               bottom_text_y=bottom_text_y
                                
                                # Assignment #3. Displaying the text's positioning
 
